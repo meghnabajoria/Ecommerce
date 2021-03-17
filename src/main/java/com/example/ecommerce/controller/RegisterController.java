@@ -28,7 +28,5 @@ public class RegisterController {
     public LoginResponseDto loginResponseDto(@RequestBody LoginRequestDto loginRequestDto) {
 
         return registrationService.loginUser(loginRequestDto);
-
-
     }
 }
