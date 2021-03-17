@@ -1,9 +1,7 @@
 package com.example.ecommerce.controller;
 
-import com.example.ecommerce.dto.LoginRequestDto;
-import com.example.ecommerce.dto.LoginResponseDto;
-import com.example.ecommerce.dto.RegistrationRequestDto;
-import com.example.ecommerce.dto.RegistrationResponseDto;
+import com.example.ecommerce.dto.*;
+import com.example.ecommerce.service.ProductService;
 import com.example.ecommerce.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +16,8 @@ public class RegisterController {
 
     @Autowired
     private RegistrationService registrationService;
+    @Autowired
+    private ProductService productService;
 
     @PostMapping("/register-as-user")
     public RegistrationResponseDto registrationResponseDto(@RequestBody RegistrationRequestDto registrationRequestDto) {
@@ -29,4 +29,14 @@ public class RegisterController {
 
         return registrationService.loginUser(loginRequestDto);
     }
+
+    @PostMapping("insert-product")
+    public ProductResponseDto insertProduct(@RequestBody ProductRequestDto productRequestDto) {
+        return productService.insertDataIntoProducts(productRequestDto);
+    }
+
+    // get- category basis
+    // update
+    // delete
+
 }
