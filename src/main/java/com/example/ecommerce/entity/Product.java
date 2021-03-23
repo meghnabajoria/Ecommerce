@@ -1,7 +1,11 @@
 package com.example.ecommerce.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +13,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
-@Entity(name = "Product")
-@Data
+@Getter
+@Setter
+@ToString
+@Document(collection = "Product")
 public class Product {
     @Id
     @GenericGenerator(name = "product_id_seq" , strategy = "increment")
@@ -18,7 +24,7 @@ public class Product {
     private Long productId;
     private String productName;
     private String productDescription;
-    private List<String> Images;
+   // private List<String> Images;
     private String category;
     private String brand;
     private int MRP;

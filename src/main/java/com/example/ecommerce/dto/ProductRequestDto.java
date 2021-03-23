@@ -11,7 +11,7 @@ public class ProductRequestDto {
 //    private Long productId;
     private String productName;
     private String productDescription;
-    private List<String> Images;
+    // private List<String> Images;
     private String category;
     private String brand;
     private int MRP;
