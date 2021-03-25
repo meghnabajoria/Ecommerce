@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 23/03/21 4:23 PM
  **/
 @CrossOrigin
-@RestController
+@RestController("/product")
 public class ProductController {
 
     @Autowired
@@ -35,14 +35,4 @@ public class ProductController {
 
         return productService.getProductByProductName(productName);
     }
-
-    // @PutMapping("/update-product/{productId}")
-
-
-
-
-    // get- category basis
-    // update
-    // delete
-
 }
